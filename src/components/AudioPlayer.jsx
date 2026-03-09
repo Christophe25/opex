@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Play, Pause, SkipForward, SkipBack, Volume2 } from 'lucide-react';
+import { Play, Pause, SkipForward, SkipBack, Volume2, X } from 'lucide-react';
 
-export function AudioPlayer({ podcast, isPlaying, audioRef, onPlayPause, onPrev, onNext }) {
+export function AudioPlayer({ podcast, isPlaying, audioRef, onPlayPause, onPrev, onNext, onClose }) {
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
 
@@ -79,6 +79,10 @@ export function AudioPlayer({ podcast, isPlaying, audioRef, onPlayPause, onPrev,
             <div className="player-volume">
                 <Volume2 size={18} color="var(--text-secondary)" />
             </div>
+
+            <button className="player-btn close-player-btn" onClick={onClose} aria-label="Fermer le lecteur" title="Fermer">
+                <X size={20} color="var(--text-secondary)" />
+            </button>
         </div>
     );
 }

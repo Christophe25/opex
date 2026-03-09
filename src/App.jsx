@@ -162,6 +162,14 @@ function App() {
           }}
           onPrev={playPrev}
           onNext={playNext}
+          onClose={() => {
+            if (audioRef.current) {
+              audioRef.current.pause();
+              audioRef.current.currentTime = 0;
+            }
+            setIsPlaying(false);
+            setCurrentPodcast(null);
+          }}
         />
       )}
     </div>

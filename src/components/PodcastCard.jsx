@@ -1,5 +1,5 @@
 import React from 'react';
-import { Play, Pause, CheckCircle, Clock, ExternalLink } from 'lucide-react';
+import { Play, Pause, CheckCircle, Clock } from 'lucide-react';
 
 export function PodcastCard({ podcast, isRead, isCurrentlyPlaying, onToggleRead, onPlay }) {
     return (
@@ -54,11 +54,7 @@ export function PodcastCard({ podcast, isRead, isCurrentlyPlaying, onToggleRead,
                     </button>
 
                     <div className="card-actions-right">
-                        {podcast.link && (
-                            <a href={podcast.link} target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-icon" title="Voir sur Ausha">
-                                <ExternalLink size={16} />
-                            </a>
-                        )}
+
                         <button
                             className={`btn btn-secondary btn-icon ${isRead ? 'btn--active' : ''}`}
                             onClick={() => onToggleRead(podcast.id)}
