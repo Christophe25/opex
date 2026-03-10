@@ -4,6 +4,7 @@ import { PodcastCard } from './components/PodcastCard';
 import { AudioPlayer } from './components/AudioPlayer';
 import { Headphones, Archive, Library } from 'lucide-react';
 import { QRCodeSVG } from 'qrcode.react';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   const [activeTab, setActiveTab] = useState('all');
@@ -180,6 +181,9 @@ function App() {
           }}
         />
       )}
+
+      {/* Vercel Web Analytics */}
+      <Analytics />
     </div>
   );
 }
