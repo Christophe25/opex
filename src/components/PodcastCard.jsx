@@ -1,7 +1,9 @@
-import React from 'react';
-import { Play, Pause, CheckCircle, Clock } from 'lucide-react';
+import React, { useState } from 'react';
+import { Play, Pause, CheckCircle, Clock, FileQuestion } from 'lucide-react';
+import { Quiz } from './Quiz';
 
 export function PodcastCard({ podcast, isRead, isCurrentlyPlaying, onToggleRead, onPlay }) {
+    const [showQuiz, setShowQuiz] = useState(false);
     return (
         <div className={`card glass ${isRead ? 'card--read' : ''}`}>
             {/* Episode Image */}
@@ -54,7 +56,13 @@ export function PodcastCard({ podcast, isRead, isCurrentlyPlaying, onToggleRead,
                     </button>
 
                     <div className="card-actions-right">
-
+                        <button
+                            className={`btn btn-secondary btn-icon ${showQuiz ? 'btn--active' : ''}`}
+                            onClick={() => setShowQuiz(!showQuiz)}
+                            title="Faire le Quiz"
+                        >
+                            <FileQuestion size={18} />
+                        </button>
                         <button
                             className={`btn btn-secondary btn-icon ${isRead ? 'btn--active' : ''}`}
                             onClick={() => onToggleRead(podcast.id)}
@@ -65,6 +73,8 @@ export function PodcastCard({ podcast, isRead, isCurrentlyPlaying, onToggleRead,
                     </div>
                 </div>
             </div>
+
+            {showQuiz && <Quiz episodeId={podcast.id} />}
         </div>
     );
 }
