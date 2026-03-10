@@ -198,6 +198,8 @@ h1 {
 .card {
   transition: var(--transition);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
@@ -265,9 +267,11 @@ h1 {
   transform: scale(1.1) !important;
 }
 
-/* Card Body */
 .card-body {
   padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .card-meta {
@@ -322,6 +326,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: auto;
 }
 
 .card-actions-right {
