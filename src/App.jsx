@@ -3,6 +3,7 @@ import { podcasts, podcastMeta } from './data';
 import { PodcastCard } from './components/PodcastCard';
 import { AudioPlayer } from './components/AudioPlayer';
 import { Headphones, Archive, Library } from 'lucide-react';
+import { QRCodeSVG } from 'qrcode.react';
 
 function App() {
   const [activeTab, setActiveTab] = useState('all');
@@ -87,6 +88,13 @@ function App() {
           <img src={podcastMeta.coverImage} alt="" className="hero-cover" />
           <div className="hero-overlay" />
         </div>
+
+        {/* QR Code Share */}
+        <div className="hero-qrcode glass">
+          <QRCodeSVG value={window.location.href} size={64} bgColor="transparent" fgColor="#d4af37" />
+          <span className="hero-qrcode-text">Scanner pour<br />partager</span>
+        </div>
+
         <div className="hero-content">
           <div className="badge glass">
             <Headphones size={18} color="var(--primary)" />
