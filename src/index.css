@@ -582,6 +582,21 @@ h1 {
     grid-template-columns: 1fr;
   }
 
+  .hero-qrcode {
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem;
+  }
+
+  .hero-qrcode svg {
+    width: 48px;
+    height: 48px;
+  }
+
+  .hero-qrcode-text {
+    display: none;
+  }
+
   .player-bar {
     width: 96%;
     padding: 0.6rem 1rem;
