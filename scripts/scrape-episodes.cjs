@@ -16,6 +16,7 @@ const EPISODE_URLS = [
     'https://podcast.ausha.co/excellence-operationnelle/episode-9-la-resolution-de-probleme-penser-autrement',
     'https://podcast.ausha.co/excellence-operationnelle/episode-10-le-takt-time-equilibrer-le-rythme-de-production',
     'https://podcast.ausha.co/excellence-operationnelle/episode-11-l-autonomation-detecter-sans-controle-final',
+    'https://podcast.ausha.co/excellence-operationnelle/episode-12-cultiver-l-excellence-le-lean-a-l-ere-du-digital-et-de-l-ia',
 ];
 
 const PODCAST_META = {
