@@ -116,7 +116,7 @@ async function scrapeAllEpisodes() {
                 title: title || `Épisode ${epNum}`,
                 audioUrl: audioUrl || '',
                 description: "Le Temps Maîtrisé - une série de Christophe Fournier dédiée à l'excellence opérationnelle dans l'horlogerie suisse. Chaque épisode explore les outils du Lean, la qualité et la précision, appliqués à un univers où le temps se mesure au micron.",
-                image: image,
+                image: `/infographics/ep${epNum}.png`,
                 link: url,
                 keywords: ['excellence opérationnelle', 'lean management', 'horlogerie', 'suisse', 'qualité'],
             });
@@ -135,7 +135,7 @@ async function scrapeAllEpisodes() {
                 title: `Épisode ${epNum}`,
                 audioUrl: '',
                 description: '',
-                image: PODCAST_META.coverImage,
+                image: `/infographics/ep${epNum}.png`,
                 link: url,
                 keywords: [],
             });
