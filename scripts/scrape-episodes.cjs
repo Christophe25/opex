@@ -102,7 +102,7 @@ function extractImage(html) {
 function extractDuration(html) {
     // Look for duration in meta or itunes:duration
     const match = html.match(/(\d+)min/);
-    return match ? `${match[1]}:00` : 'N/A';
+    return match ? `${match[1]} min` : 'N/A';
 }
 
 function extractPublishDate(html) {
