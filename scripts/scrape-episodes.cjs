@@ -69,7 +69,12 @@ function extractAudioUrl(html) {
 function extractTitle(html) {
     const match = html.match(/<title>([^<]+)<\/title>/);
     if (match) {
-        return match[1].replace(/ \| Ausha/, '').trim();
+        let title = match[1].replace(/ \| Ausha/, '').trim();
+        // Remove everything after " | " (which usually contains the series name)
+        title = title.split(' | ')[0].trim();
+        // Decode HTML entities
+        title = title.replace(/&#x27;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&');
+        return title;
     }
     return null;
 }
