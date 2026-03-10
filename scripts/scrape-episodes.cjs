@@ -129,6 +129,8 @@ async function scrapeAllEpisodes() {
             const audioUrl = extractAudioUrl(html);
             const title = extractTitle(html);
             const image = extractImage(html);
+            const duration = extractDuration(html);
+            const date = extractPublishDate(html);
 
             episodes.push({
                 id: `ep-${epNum}`,
@@ -136,6 +138,8 @@ async function scrapeAllEpisodes() {
                 title: title || `Épisode ${epNum}`,
                 audioUrl: audioUrl || '',
                 description: EPISODE_DESCRIPTIONS[i],
+                duration: duration || 'N/A',
+                date: date || new Date().toISOString(),
                 image: `/infographics/ep${epNum}.png`,
                 link: url,
                 keywords: ['excellence opérationnelle', 'lean management', 'horlogerie', 'suisse', 'qualité'],
@@ -155,6 +159,8 @@ async function scrapeAllEpisodes() {
                 title: `Épisode ${epNum}`,
                 audioUrl: '',
                 description: '',
+                duration: 'N/A',
+                date: new Date().toISOString(),
                 image: `/infographics/ep${epNum}.png`,
                 link: url,
                 keywords: [],
