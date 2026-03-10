@@ -27,6 +27,21 @@ const PODCAST_META = {
     link: "https://podcast.ausha.co/excellence-operationnelle"
 };
 
+const EPISODE_DESCRIPTIONS = [
+    "Dans cet épisode, plongez aux origines de l'excellence horlogère. Découvrez comment la quête millimétrique de précision et du 'zéro défaut' a forgé une mentalité industrielle unique, socle idéal pour le Lean Management.",
+    "Qu'est-ce que l'excellence opérationnelle ? Apprenez comment cette philosophie (le 'Lean'), axée sur la création de valeur et la satisfaction du client final, a transcendé l'industrie automobile pour s'appliquer à la haute horlogerie.",
+    "La chasse aux Mudas ! Explorez les 7 grandes familles de gaspillages (surproduction, attente, mouvements inutiles...) et comprenez comment l'œil exercé de l'horloger les traque pour préserver la valeur de chaque seconde.",
+    "Découvrez la méthode des '5S' : un outil fondamental pour créer un environnement de travail sécurisé, organisé et performant. L'ordre et la rigueur sont les premières fondations de la qualité esthétique et technique.",
+    "Le standard de travail n'est pas une contrainte, mais une protection. Comprenez comment la définition et le respect rigoureux de la 'meilleure méthode connue' garantit une qualité de production répétable et sans stress.",
+    "Voir pour comprendre instantanément : le Management Visuel. Comment l'utilisation de repères visuels simples, de codes couleurs et de tableaux (AIC) transforme un atelier complexe en un écosystème limpide piloté par ses équipes.",
+    "Le 'Gemba', ou le lieu de la vérité. Pourquoi un manager de l'excellence opérationnelle doit quitter son bureau et ses tableaux de bord pour aller observer respectueusement la valeur ajoutée là où elle se crée : sur le terrain.",
+    "Le Kaizen, la force des petits pas. Découvrez comment l'amélioration continue n'est pas faite de grandes révolutions technologiques, mais d'une multitude de petites idées quotidiennes portées par les artisans eux-mêmes.",
+    "Plongez dans les méthodes de Résolution de Problème telles que les '5 Pourquoi' et le diagramme d'Ishikawa. Apprenez à remonter méticuleusement à la cause racine d'une anomalie plutôt que de n'en traiter que les symptômes.",
+    "Le rythme musical de la manufacture : le Takt Time. Découvrez comment équilibrer harmonieusement la cadence de production avec la demande client, pour éviter à la fois la surproduction coûteuse et la précipitation.",
+    "L'Autonomation (Jidoka) expliquée : pourquoi accorder aux machines et aux opérateurs le pouvoir (et le devoir) d'arrêter la production à la moindre anomalie est le secret d'une qualité intégrée parfaite avant l'étape suivante.",
+    "L'industrie 4.0 rencontre le Lean. Comment la digitalisation, la récolte de données intelligentes et la précision de l'Intelligence Artificielle viennent démultiplier (sans remplacer) les fondamentaux humains de l'excellence opérationnelle."
+];
+
 function fetchPage(url) {
     return new Promise((resolve, reject) => {
         const client = url.startsWith('https') ? https : http;
@@ -120,7 +135,7 @@ async function scrapeAllEpisodes() {
                 episodeNumber: epNum,
                 title: title || `Épisode ${epNum}`,
                 audioUrl: audioUrl || '',
-                description: "Le Temps Maîtrisé - une série de Christophe Fournier dédiée à l'excellence opérationnelle dans l'horlogerie suisse. Chaque épisode explore les outils du Lean, la qualité et la précision, appliqués à un univers où le temps se mesure au micron.",
+                description: EPISODE_DESCRIPTIONS[i],
                 image: `/infographics/ep${epNum}.png`,
                 link: url,
                 keywords: ['excellence opérationnelle', 'lean management', 'horlogerie', 'suisse', 'qualité'],
