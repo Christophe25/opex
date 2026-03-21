@@ -382,5 +382,133 @@ export const quizzes = {
             correctAnswer: 2,
             explanation: "La connexion humaine et l'observation concrète des processus (Gemba) seront toujours l'ancrage indispensable des datas de l'IA."
         }
+    ],
+    "bonus-qrqc": [
+        {
+            question: "Que signifie l'acronyme QRQC ?",
+            options: ["Quality Rapid Question Control", "Quick Response Quality Control", "Quantity Response Quality Control", "Quantitative Range Quality Concept"],
+            correctAnswer: 1,
+            explanation: "Le QRQC (Quick Response Quality Control) est une démarche axée sur la réactivité immédiate face à un défaut qualité."
+        },
+        {
+            question: "Quel est l'aspect fondamental et la première étape lors de l'apparition d'un problème en QRQC ?",
+            options: ["Convoquer le comité de direction", "Attendre la fin de la journée pour l'analyser", "Analyser le problème directement là où il s'est produit (le Gemba) avec les pièces réelles", "Remplacer immédiatement la machine"],
+            correctAnswer: 2,
+            explanation: "L'analyse doit se faire sur le terrain, immédiatement, et avec les pièces réelles (San Gen Shugi)."
+        },
+        {
+            question: "Quelle action est désignée sous le terme de 'confinement' dans la méthode QRQC ?",
+            options: ["Isoler le collaborateur fautif", "Isoler la zone de production", "Isoler immédiatement et sécuriser les pièces suspectes pour protéger le client", "Ignorer le problème temporairement"],
+            correctAnswer: 2,
+            explanation: "Le confinement protège le client en bloquant les produits non conformes avant même la recherche de la cause racine."
+        },
+        {
+            question: "En QRQC, au bout de combien de temps l'action de confinement (mesure conservatoire) doit-elle idéalement être prise ?",
+            options: ["Dans les 24h", "Dans le mois", "En 5 minutes", "Immédiatement (en quelques heures maximum)"],
+            correctAnswer: 3,
+            explanation: "Le Quick Response implique une prise en charge et une action de confinement quasi-immédiate (souvent dans les 24h grand maximum)."
+        },
+        {
+            question: "Quelle est l'ultime étape d'un bon cycle QRQC pour éviter la réapparition du problème ?",
+            options: ["Trouver un nouveau fournisseur", "La standardisation de la solution et le partage transverse des leçons apprises (Lessons Learned)", "Jeter le rapport", "Augmenter la cadence de production"],
+            correctAnswer: 1,
+            explanation: "Une fois le problème résolu, il faut verrouiller le processus avec des standards clairs et partager l'expérience avec les autres équipes."
+        }
+    ],
+    "bonus-8d": [
+        {
+            question: "Que signifie le 'D' dans la méthode 8D ?",
+            options: ["Départements", "Directives", "Disciplines", "Documents"],
+            correctAnswer: 2,
+            explanation: "Le 8D correspond aux 8 Disciplines de la résolution de problème complexe."
+        },
+        {
+            question: "Quelle est la première vraie étape (D1) essentielle avant de s'attaquer au problème technique ?",
+            options: ["Commander des pièces de rechange", "Constituer une équipe pluridisciplinaire adéquate", "Licencier l'opérateur en cause", "Rédiger le rapport final"],
+            correctAnswer: 1,
+            explanation: "Avant tout, il faut une équipe avec l'expertise (produit, processus, qualité) et l'autorité nécessaires."
+        },
+        {
+            question: "L'étape D3 correspond aux 'Actions de confinement' (ou palliatives). Quel est leur but principal ?",
+            options: ["Punir les équipes", "Définir la cause racine profonde", "Protéger immédiatement le client en isolant le problème", "Baisser les coûts"],
+            correctAnswer: 2,
+            explanation: "Comme le QRQC, le 8D exige de sécuriser le client (tri, blocage, mur qualité) pendant la durée de l'investigation."
+        },
+        {
+            question: "Pour identifier les causes racines profondes (D4), quel outil est classiquement combiné au 8D ?",
+            options: ["Le brainstorming sans règles", "Le diagramme d'Ishikawa et les 5 Pourquoi", "L'horoscope", "Un logiciel comptable"],
+            correctAnswer: 1,
+            explanation: "Le 8D donne la structure (les 8 étapes), et le diagramme d'Ishikawa ou les 5 Pourquoi fournissent la méthode d'analyse des causes."
+        },
+        {
+            question: "Que fait-on à la discipline D8 (Dernière étape) ?",
+            options: ["On félicite l'équipe et on clôture le dossier", "On cherche un nouveau problème", "On archive sans rien dire", "On baisse les bras"],
+            correctAnswer: 0,
+            explanation: "Reconnaître l'effort, valoriser le travail et clore l'incident sont vitaux pour la dynamique d'amélioration continue du personnel."
+        }
+    ],
+    "bonus-pdca": [
+        {
+            question: "Que signifient les 4 lettres du PDCA ?",
+            options: ["Program, Design, Control, Analyze", "Plan, Do, Check, Act", "Product, Development, Cost, Assessment", "Process, Data, Correction, Automation"],
+            correctAnswer: 1,
+            explanation: "Le PDCA (Plan-Do-Check-Act) est souvent appelé la Roue de Deming pour l'amélioration continue."
+        },
+        {
+            question: "Selon la philosophie Lean, combien de temps devrait idéalement prendre la phase 'Plan' (Planifier) dans un cycle PDCA ?",
+            options: ["Une minute", "10%", "Au moins 50% du temps total", "100% car on ne fait rien"],
+            correctAnswer: 2,
+            explanation: "Une bonne planification (comprendre le problème et concevoir la solution) évite les échecs lors de l'exécution ('Do')."
+        },
+        {
+            question: "Que fait-on lors de la phase 'Do' (Faire) ?",
+            options: ["On déploie la solution finale à l'échelle de toute l'entreprise", "On teste la solution à petite échelle ou en condition expérimentale", "On fait appel à un consultant", "On attend que le problème passe"],
+            correctAnswer: 1,
+            explanation: "Le 'Do' est la phase de test. Déployer directement sans tester massivement une solution non prouvée est hors cadre du PDCA."
+        },
+        {
+            question: "Que signifie 'Check' (Vérifier) dans la boucle PDCA ?",
+            options: ["Comparer les résultats obtenus lors du test avec les prévisions établies au 'Plan'", "Contrôler la présence des employés", "Faire un chèque au fournisseur", "Oublier l'expérience"],
+            correctAnswer: 0,
+            explanation: "La vérification est cruciale : la solution expérimentée apporte-t-elle objectivement l'amélioration prévue ?"
+        },
+        {
+            question: "L'étape 'Act' (Agir/Ajuster) a pour principal objectif de :",
+            options: ["Agir comme s'il ne s'était rien passé", "Rédiger un poème", "Standardiser la solution si elle est bonne, ou recommencer un cycle si elle a échoué", "Arrêter complètement l'usine"],
+            correctAnswer: 2,
+            explanation: "L'ancrage par les standards est vital pour éviter le retour en arrière de la 'Roue de Deming'."
+        }
+    ],
+    "bonus-amdec": [
+        {
+            question: "L'AMDEC (ou FMEA en anglais) est avant tout un outil de nature :",
+            options: ["Curative (après que le problème soit survenu)", "Préventive (pour anticiper les risques avant la production)", "Répressive", "Comptable"],
+            correctAnswer: 1,
+            explanation: "Contrairement au QRQC ou au 8D, l'AMDEC a pour vocation d'anticiper les défaillances avant même leur survenue."
+        },
+        {
+            question: "Dans l'analyse de criticité (IPR ou RPN), quels sont les trois paramètres multipliés entre eux ?",
+            options: ["Coût, Qualité, Délai", "Fréquence, Gravité, Détection", "Humidité, Température, Pression", "Temps, Distance, Vitesse"],
+            correctAnswer: 1,
+            explanation: "L'Indice de Priorité des Risques s'évalue par IPR = Gravité (ou Sévérité) x Fréquence (Occurrence) x Non-détection."
+        },
+        {
+            question: "Si un défaut est très grave (Gravité = 10), mais presque impossible à produire (Occurrence = 1) et immanquablement détecté (Détection = 1). Est-il prioritaire ?",
+            options: ["Oui, la gravité fait foi", "Non, l'IPR global (10 x 1 x 1 = 10) reste faible comparativement à des risques plus fréquents et furtifs", "L'AMDEC ne s'occupe pas de gravité", "On ne fait rien"],
+            correctAnswer: 1,
+            explanation: "Un IPR faible (10) signifie que la maîtrise est sous contrôle, malgré une gravité importante."
+        },
+        {
+            question: "Parmi ces types d'AMDEC, lequel se concentre sur les erreurs humaines ou mécaniques lors de la fabrication ?",
+            options: ["AMDEC Produit / Conception", "AMDEC Process", "AMDEC Écologique", "AMDEC Commerciale"],
+            correctAnswer: 1,
+            explanation: "L'AMDEC Processus analyse les étapes de fabrication étape par étape pour y supprimer tout risque d'erreur."
+        },
+        {
+            question: "Qu'est ce qu'un 'Mode de Défaillance' ?",
+            options: ["Un style de vêtement", "La cause profonde du problème", "La manière dont le système ou la pièce échoue à remplir sa fonction", "Une machine qui tombe en panne de courant"],
+            correctAnswer: 2,
+            explanation: "Le mode de défaillance décrit comment l'élément dysfonctionne (par exemple : le composant est rayé, rayure étant le mode)."
+        }
     ]
 };

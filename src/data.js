@@ -225,3 +225,54 @@ export const podcasts = [
     ]
   }
 ];
+
+export const bonusPodcasts = [
+  {
+    "id": "bonus-qrqc",
+    "episodeNumber": "Bonus",
+    "title": "QRQC (Quick Response Quality Control)",
+    "audioUrl": "https://audio.ausha.co/LjDL5C9kxN85.mp3\\",
+    "description": "Découvrez le processus du QRQC : de la détection de l'anomalie jusqu'à la résolution et la standardisation, pour une maîtrise de la qualité en temps réel.",
+    "duration": "15 min",
+    "date": new Date().toISOString(),
+    "image": "/infographics/bonus_qrqc.png",
+    "link": "https://podcast.ausha.co/excellence-operationnelle/qrqc",
+    "keywords": ["qrqc", "qualité", "réactivité", "résolution"]
+  },
+  {
+    "id": "bonus-8d",
+    "episodeNumber": "Bonus",
+    "title": "Méthodologie 8D (Eight Disciplines)",
+    "audioUrl": "https://audio.ausha.co/aO1X5Uxpjna1.mp3\\",
+    "description": "La résolution de problèmes complexe en 8 étapes structurées : constituer l'équipe, décrire le problème, définir la cause racine et prévenir la récurrence.",
+    "duration": "14 min",
+    "date": new Date().toISOString(),
+    "image": "/infographics/bonus_8d.png",
+    "link": "https://podcast.ausha.co/excellence-operationnelle/8d",
+    "keywords": ["8D", "résolution de problème", "cause racine", "qualité"]
+  },
+  {
+    "id": "bonus-pdca",
+    "episodeNumber": "Bonus",
+    "title": "Le Cycle PDCA de Deming",
+    "audioUrl": "https://audio.ausha.co/ewZLXIppl7ZV.mp3\\",
+    "description": "Le cycle d'amélioration continue par excellence : Planifier (Plan), Faire (Do), Vérifier (Check) et Agir (Act).",
+    "duration": "12 min",
+    "date": new Date().toISOString(),
+    "image": "/infographics/bonus_pdca.png",
+    "link": "https://podcast.ausha.co/excellence-operationnelle/pdca",
+    "keywords": ["pdca", "deming", "amélioration continue", "processus"]
+  },
+  {
+    "id": "bonus-amdec",
+    "episodeNumber": "Bonus",
+    "title": "AMDEC (FMEA en anglais)",
+    "audioUrl": "https://audio.ausha.co/10R9F2n8Lp4K.mp3\\",
+    "description": "L'Analyse des Modes de Défaillance, de leurs Effets et de leur Criticité. L'outil préventif incontournable pour anticiper les risques avant qu'ils ne surviennent.",
+    "duration": "18 min",
+    "date": new Date().toISOString(),
+    "image": "/infographics/bonus_amdec.png",
+    "link": "https://podcast.ausha.co/excellence-operationnelle/amdec",
+    "keywords": ["amdec", "fmea", "prévention", "risques"]
+  }
+];

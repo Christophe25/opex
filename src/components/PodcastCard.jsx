@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Play, Pause, CheckCircle, Clock, FileQuestion } from 'lucide-react';
+import { Play, Pause, CheckCircle, Clock, FileQuestion, Award } from 'lucide-react';
 import { Quiz } from './Quiz';
 
 export function PodcastCard({ podcast, isRead, isCurrentlyPlaying, onToggleRead, onPlay }) {
@@ -9,16 +9,18 @@ export function PodcastCard({ podcast, isRead, isCurrentlyPlaying, onToggleRead,
             {/* Episode Image */}
             <div className="card-image">
                 <img src={podcast.image} alt={podcast.title} />
-                <button
-                    className="card-play-btn"
-                    onClick={() => onPlay(podcast)}
-                    aria-label={isCurrentlyPlaying ? 'Pause' : 'Écouter'}
-                >
-                    {isCurrentlyPlaying
-                        ? <Pause size={24} fill="black" />
-                        : <Play size={24} fill="black" style={{ marginLeft: '3px' }} />
-                    }
-                </button>
+                {podcast.audioUrl && (
+                    <button
+                        className="card-play-btn"
+                        onClick={() => onPlay(podcast)}
+                        aria-label={isCurrentlyPlaying ? 'Pause' : 'Écouter'}
+                    >
+                        {isCurrentlyPlaying
+                            ? <Pause size={24} fill="black" />
+                            : <Play size={24} fill="black" style={{ marginLeft: '3px' }} />
+                        }
+                    </button>
+                )}
             </div>
 
             {/* Content */}
@@ -50,10 +52,16 @@ export function PodcastCard({ podcast, isRead, isCurrentlyPlaying, onToggleRead,
 
                 {/* Actions */}
                 <div className="card-actions">
-                    <button className="btn" onClick={() => onPlay(podcast)}>
-                        {isCurrentlyPlaying ? <Pause size={16} /> : <Play size={16} fill="currentColor" />}
-                        {isCurrentlyPlaying ? 'Pause' : 'Écouter'}
-                    </button>
+                    {podcast.audioUrl ? (
+                        <button className="btn" onClick={() => onPlay(podcast)}>
+                            {isCurrentlyPlaying ? <Pause size={16} /> : <Play size={16} fill="currentColor" />}
+                            {isCurrentlyPlaying ? 'Pause' : 'Écouter'}
+                        </button>
+                    ) : (
+                        <div className="badge glass" style={{ marginBottom: 0, padding: '0.4rem 0.8rem' }}>
+                            <Award size={14} style={{ marginRight: '4px' }}/> Article Bonus
+                        </div>
+                    )}
 
                     <div className="card-actions-right">
                         <button

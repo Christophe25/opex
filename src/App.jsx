@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { podcasts, podcastMeta } from './data';
+import { podcasts, podcastMeta, bonusPodcasts } from './data';
 import { PodcastCard } from './components/PodcastCard';
 import { AudioPlayer } from './components/AudioPlayer';
-import { Headphones, Archive, Library } from 'lucide-react';
+import { Headphones, Archive, Library, Award } from 'lucide-react';
 import { QRCodeSVG } from 'qrcode.react';
 import { Analytics } from '@vercel/analytics/react';
 
@@ -26,10 +26,12 @@ function App() {
     );
   };
 
-  const filteredPodcasts = podcasts.filter(p => {
-    if (activeTab === 'archives') return readIds.includes(p.id);
-    return !readIds.includes(p.id);
-  });
+  const displayedItems = activeTab === 'bonus' 
+    ? bonusPodcasts 
+    : podcasts.filter(p => {
+        if (activeTab === 'archives') return readIds.includes(p.id);
+        return !readIds.includes(p.id);
+      });
 
   const handlePlay = (podcast) => {
     if (currentPodcast?.id === podcast.id) {
@@ -136,11 +138,18 @@ function App() {
           <Archive size={18} style={{ marginRight: '8px', verticalAlign: 'middle' }} />
           Archives
         </div>
+        <div
+          className={`tab ${activeTab === 'bonus' ? 'active' : ''}`}
+          onClick={() => setActiveTab('bonus')}
+        >
+          <Award size={18} style={{ marginRight: '8px', verticalAlign: 'middle' }} />
+          Bonus
+        </div>
       </div>
 
       {/* Podcast Grid */}
       <div className="podcast-grid">
-        {filteredPodcasts.map(podcast => (
+        {displayedItems.map(podcast => (
           <PodcastCard
             key={podcast.id}
             podcast={podcast}
@@ -152,7 +161,7 @@ function App() {
         ))}
       </div>
 
-      {filteredPodcasts.length === 0 && (
+      {displayedItems.length === 0 && (
         <div className="empty-state">
           <Headphones size={48} color="var(--text-secondary)" />
           <p>{activeTab === 'archives' ? 'Aucun épisode archivé.' : 'Tous les épisodes ont été écoutés !'}</p>
