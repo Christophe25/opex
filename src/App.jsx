@@ -2,11 +2,14 @@ import React, { useState, useEffect, useRef } from 'react';
 import { podcasts, podcastMeta, bonusPodcasts } from './data';
 import { PodcastCard } from './components/PodcastCard';
 import { AudioPlayer } from './components/AudioPlayer';
+import { NavBar } from './components/NavBar';
+import { CVPage } from './components/CVPage';
+import { CoverLetterPage } from './components/CoverLetterPage';
 import { Headphones, Archive, Library, Award } from 'lucide-react';
 import { QRCodeSVG } from 'qrcode.react';
 import { Analytics } from '@vercel/analytics/react';
 
-function App() {
+function PodcastSection() {
   const [activeTab, setActiveTab] = useState('all');
   const [readIds, setReadIds] = useState(() => {
     const saved = localStorage.getItem('opex_read_ids');
@@ -26,12 +29,12 @@ function App() {
     );
   };
 
-  const displayedItems = activeTab === 'bonus' 
-    ? bonusPodcasts 
+  const displayedItems = activeTab === 'bonus'
+    ? bonusPodcasts
     : podcasts.filter(p => {
-        if (activeTab === 'archives') return readIds.includes(p.id);
-        return !readIds.includes(p.id);
-      });
+      if (activeTab === 'archives') return readIds.includes(p.id);
+      return !readIds.includes(p.id);
+    });
 
   const handlePlay = (podcast) => {
     if (currentPodcast?.id === podcast.id) {
@@ -76,8 +79,7 @@ function App() {
   };
 
   return (
-    <div className="container">
-      {/* Hidden audio element */}
+    <>
       <audio
         ref={audioRef}
         onEnded={() => { setIsPlaying(false); playNext(); }}
@@ -85,14 +87,12 @@ function App() {
         onPlay={() => setIsPlaying(true)}
       />
 
-      {/* Hero Header */}
       <header className="hero">
         <div className="hero-bg">
           <img src={podcastMeta.coverImage} alt="" className="hero-cover" />
           <div className="hero-overlay" />
         </div>
 
-        {/* QR Code Share */}
         <div className="hero-qrcode glass">
           <QRCodeSVG value={window.location.href} size={64} bgColor="transparent" fgColor="#d4af37" />
           <span className="hero-qrcode-text">Scanner pour<br />partager</span>
@@ -122,32 +122,21 @@ function App() {
         </div>
       </header>
 
-      {/* Tabs */}
       <div className="tabs">
-        <div
-          className={`tab ${activeTab === 'all' ? 'active' : ''}`}
-          onClick={() => setActiveTab('all')}
-        >
+        <div className={`tab ${activeTab === 'all' ? 'active' : ''}`} onClick={() => setActiveTab('all')}>
           <Library size={18} style={{ marginRight: '8px', verticalAlign: 'middle' }} />
           Épisodes
         </div>
-        <div
-          className={`tab ${activeTab === 'archives' ? 'active' : ''}`}
-          onClick={() => setActiveTab('archives')}
-        >
+        <div className={`tab ${activeTab === 'archives' ? 'active' : ''}`} onClick={() => setActiveTab('archives')}>
           <Archive size={18} style={{ marginRight: '8px', verticalAlign: 'middle' }} />
           Archives
         </div>
-        <div
-          className={`tab ${activeTab === 'bonus' ? 'active' : ''}`}
-          onClick={() => setActiveTab('bonus')}
-        >
+        <div className={`tab ${activeTab === 'bonus' ? 'active' : ''}`} onClick={() => setActiveTab('bonus')}>
           <Award size={18} style={{ marginRight: '8px', verticalAlign: 'middle' }} />
           Bonus
         </div>
       </div>
 
-      {/* Podcast Grid */}
       <div className="podcast-grid">
         {displayedItems.map(podcast => (
           <PodcastCard
@@ -168,7 +157,6 @@ function App() {
         </div>
       )}
 
-      {/* Audio Player */}
       {currentPodcast && (
         <AudioPlayer
           podcast={currentPodcast}
@@ -190,10 +178,28 @@ function App() {
           }}
         />
       )}
+    </>
+  );
+}
 
-      {/* Vercel Web Analytics */}
+function App() {
+  const [currentPage, setCurrentPage] = useState('podcast');
+
+  const handleNavigate = (page) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  return (
+    <>
+      <NavBar currentPage={currentPage} onNavigate={handleNavigate} />
+      <div className="container">
+        {currentPage === 'podcast' && <PodcastSection />}
+        {currentPage === 'cv' && <CVPage />}
+        {currentPage === 'lettre' && <CoverLetterPage />}
+      </div>
       <Analytics />
-    </div>
+    </>
   );
 }
 
