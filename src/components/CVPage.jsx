@@ -1,5 +1,5 @@
 import React from 'react';
-import { Briefcase, GraduationCap, Cpu, Wrench, Mic, ExternalLink } from 'lucide-react';
+import { Briefcase, GraduationCap, Cpu, Wrench, Mic } from 'lucide-react';
 
 const experiences = [
   {
@@ -106,7 +106,7 @@ function SkillDots({ level }) {
   );
 }
 
-export function CVPage() {
+export function CVPage({ onNavigate }) {
   return (
     <div className="cv-page">
       {/* CV Hero */}
@@ -126,16 +126,10 @@ export function CVPage() {
             <span>Les Fins, France (25500)</span>
           </div>
         </div>
-        <a
-          href="https://podcast.ausha.co/excellence-operationnelle"
-          target="_blank"
-          rel="noreferrer"
-          className="btn cv-podcast-btn"
-        >
+        <button className="btn cv-podcast-btn" onClick={() => onNavigate('podcast')}>
           <Mic size={16} />
           Mon Podcast
-          <ExternalLink size={14} />
-        </a>
+        </button>
       </div>
 
       <div className="cv-grid">

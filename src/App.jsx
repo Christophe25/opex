@@ -195,7 +195,7 @@ function App() {
       <NavBar currentPage={currentPage} onNavigate={handleNavigate} />
       <div className="container">
         {currentPage === 'podcast' && <PodcastSection />}
-        {currentPage === 'cv' && <CVPage />}
+        {currentPage === 'cv' && <CVPage onNavigate={handleNavigate} />}
         {currentPage === 'lettre' && <CoverLetterPage />}
       </div>
       <Analytics />
