@@ -1,11 +1,9 @@
 import React from 'react';
-import { Headphones, User, FileText } from 'lucide-react';
+import { Headphones } from 'lucide-react';
 
 export function NavBar({ currentPage, onNavigate }) {
   const links = [
     { id: 'podcast', label: 'Podcast', icon: <Headphones size={16} /> },
-    { id: 'cv', label: 'CV', icon: <User size={16} /> },
-    { id: 'lettre', label: 'Lettre de motivation', icon: <FileText size={16} /> },
   ];
 
   return (
